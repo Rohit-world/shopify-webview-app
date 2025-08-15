@@ -1,97 +1,107 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Shopify Store WebView App
 
-# Getting Started
+A **React Native** project using **react-native-webview** to deliver your Shopify store as a high-performance mobile experience—with smooth animations, haptic feedback, data caching, and fast rendering, just like a true native app.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 🚀 Quick Start
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+1. **Clone the Project**
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+    ```
+    git clone <REPO_URL>
+    cd <PROJECT_NAME>
+    ```
 
-```sh
-# Using npm
-npm start
+2. **Set Your Shopify Store URL**
 
-# OR using Yarn
-yarn start
-```
+    In `app.js`, edit the base URL:
 
-## Step 2: Build and run your app
+    ```
+    // app.js
+    const SHOPIFY_BASE_URL = 'https://your-shopify-store.myshopify.com';
+    ```
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+3. **Install Dependencies**
 
-### Android
+    ```
+    npm install
+    # or
+    yarn install
+    ```
 
-```sh
-# Using npm
-npm run android
+    For iOS:
 
-# OR using Yarn
-yarn android
-```
+    ```
+    cd ios
+    pod install
+    cd ..
+    ```
 
-### iOS
+4. **Start Metro**
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+    ```
+    npm start
+    # or
+    yarn start
+    ```
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+5. **Run the App**
 
-```sh
-bundle install
-```
+    - **Android:**
+        ```
+        npm run android
+        # or
+        yarn android
+        ```
+    - **iOS:**
+        ```
+        npm run ios
+        # or
+        yarn ios
+        ```
 
-Then, and every time you update your native dependencies, run:
+---
 
-```sh
-bundle exec pod install
-```
+## ✨ Features
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+- Full native-like experience for Shopify stores
+- Smooth animations and transitions
+- Haptic feedback for enhanced UX
+- Data caching for performance and offline use
+- Fast rendering powered by React Native & WebView
 
-```sh
-# Using npm
-npm run ios
+---
 
-# OR using Yarn
-yarn ios
-```
+## 🛠 Modify Your App
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+Open `App.tsx` or `app.js` to make changes—Fast Refresh will update your app instantly.  
+To force reload:
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+- Android: Press <kbd>R</kbd> twice or use the Dev Menu (<kbd>Ctrl</kbd>+<kbd>M</kbd> / <kbd>Cmd</kbd>+<kbd>M</kbd>)
+- iOS: Press <kbd>R</kbd> in the Simulator
 
-## Step 3: Modify your app
+---
 
-Now that you have successfully run the app, let's make changes!
+## ❓ Troubleshooting
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Check the [React Native Troubleshooting Guide](https://reactnative.dev/docs/troubleshooting) if you hit any snags.
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+---
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## 📝 Learn More
 
-## Congratulations! :tada:
+- [React Native Docs](https://reactnative.dev/docs/getting-started)
+- [react-native-webview](https://github.com/react-native-webview/react-native-webview)
+- [Shopify Help Center](https://help.shopify.com)
 
-You've successfully run and modified your React Native App. :partying_face:
+---
 
-### Now what?
+## 🎉 That's it!
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+Your Shopify site is now a fast, feature-rich mobile app!  
+**To point to a different Shopify store, just update `SHOPIFY_BASE_URL` in `app.js`.**
 
-# Troubleshooting
+---
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+> Replace `<REPO_URL>` and `<PROJECT_NAME>` with your actual repo link and folder name.
