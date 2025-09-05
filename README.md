@@ -92,7 +92,7 @@ Check the [React Native Troubleshooting Guide](https://reactnative.dev/docs/trou
 ## ☕ Support
 If you found this project helpful, consider supporting my work:
 
-[Buy me a coffee](https://www.buymeacoffee.com)
+[Buy me a coffee](https://buymeacoffee.com/rohitworld)
 
 ---
 
