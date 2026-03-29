@@ -1,115 +1,162 @@
-# Shopify Store WebView App
+# Shopify WebView App (React Native)
 
-A **React Native** project using **react-native-webview** to deliver your Shopify store as a high-performance mobile experience—with smooth animations, haptic feedback, data caching, and fast rendering, just like a true native app.
+Turn a Shopify storefront into a mobile app using React Native and WebView, with tabbed navigation, haptic feedback, splash preloading, and offline handling.
 
----
+This project is designed to be open source and contribution-friendly.
 
-## 🚀 Quick Start
+## Features
 
-1. **Clone the Project**
+- Shopify storefront loaded in `react-native-webview`
+- Bottom tabs for `Home`, `Products`, `Collections`, and `Account`
+- Splash screen with preloading for faster first navigation
+- Haptic feedback on tab press and web button clicks
+- Checkout detection that hides tab bar on checkout/payment pages
+- No-internet fallback screen
+- Pull-to-refresh and Android hardware acceleration
 
-    ```
-    git clone <REPO_URL>
-    cd <PROJECT_NAME>
-    ```
+## Tech Stack
 
-2. **Set Your Shopify Store URL**
+- React Native `0.80`
+- React `19`
+- TypeScript
+- React Navigation (bottom tabs)
+- `react-native-webview`
+- `react-native-reanimated`
+- `react-native-haptic-feedback`
+- `@react-native-community/netinfo`
 
-    In `app.js`, edit the base URL:
+## Project Structure
 
-    ```
-    // app.js
-    const SHOPIFY_BASE_URL = 'https://your-shopify-store.myshopify.com';
-    ```
+```text
+.
+|- App.tsx
+|- components/
+|  |- WebWrapper.tsx
+|  |- SplashScreen.tsx
+|  |- NoInternetScreen.tsx
+|  `- AnimatedTabIcon.tsx
+|- assets/
+|- android/
+|- ios/
+`- __tests__/
+```
 
-3. **Install Dependencies**
+## Getting Started
 
-    ```
-    npm install
-    # or
-    yarn install
-    ```
+### Prerequisites
 
-    For iOS:
+- Node.js `>= 18`
+- React Native Android/iOS environment set up
+- Xcode (for iOS development)
+- Android Studio + SDK (for Android development)
 
-    ```
-    cd ios
-    pod install
-    cd ..
-    ```
+React Native environment guide:
+https://reactnative.dev/docs/set-up-your-environment
 
-4. **Start Metro**
+### 1. Clone
 
-    ```
-    npm start
-    # or
-    yarn start
-    ```
+```bash
+git clone <YOUR_REPO_URL>
+cd shopify-webview-app
+```
 
-5. **Run the App**
+### 2. Install dependencies
 
-    - **Android:**
-        ```
-        npm run android
-        # or
-        yarn android
-        ```
-    - **iOS:**
-        ```
-        npm run ios
-        # or
-        yarn ios
-        ```
+```bash
+npm install
+```
 
----
+### 3. Configure your Shopify store URL
 
-## ✨ Features
+In [`App.tsx`](./App.tsx), set the `SHOPIFY_BASE_URL` value:
 
-- Full native-like experience for Shopify stores
-- Smooth animations and transitions
-- Haptic feedback for enhanced UX
-- Data caching for performance and offline use
-- Fast rendering powered by React Native & WebView
+```ts
+const SHOPIFY_BASE_URL = 'https://your-store.myshopify.com';
+```
 
----
+Notes:
+- Use your actual store domain.
+- Do not add a trailing slash.
 
-## 🛠 Modify Your App
+### 4. iOS only: install pods
 
-Open `App.tsx` or `app.js` to make changes—Fast Refresh will update your app instantly.  
-To force reload:
+```bash
+cd ios
+pod install
+cd ..
+```
 
-- Android: Press <kbd>R</kbd> twice or use the Dev Menu (<kbd>Ctrl</kbd>+<kbd>M</kbd> / <kbd>Cmd</kbd>+<kbd>M</kbd>)
-- iOS: Press <kbd>R</kbd> in the Simulator
+### 5. Start Metro
 
----
+```bash
+npm run start
+```
 
-## ❓ Troubleshooting
+### 6. Run the app
 
-Check the [React Native Troubleshooting Guide](https://reactnative.dev/docs/troubleshooting) if you hit any snags.
+Android:
 
----
+```bash
+npm run android
+```
 
-## ☕ Support
-If you found this project helpful, consider supporting my work:
+iOS:
 
-[Buy me a coffee](https://buymeacoffee.com/rohitworld)
+```bash
+npm run ios
+```
 
----
+## Available Scripts
 
+- `npm run start` - Start Metro bundler
+- `npm run android` - Run on Android
+- `npm run ios` - Run on iOS
+- `npm run lint` - Run ESLint
+- `npm run test` - Run Jest tests
 
-## 📝 Learn More
+## Customization
 
-- [React Native Docs](https://reactnative.dev/docs/getting-started)
-- [react-native-webview](https://github.com/react-native-webview/react-native-webview)
-- [Shopify Help Center](https://help.shopify.com)
+- Tab routes are defined in [`App.tsx`](./App.tsx).
+- WebView behavior and injected JavaScript are in [`components/WebWrapper.tsx`](./components/WebWrapper.tsx).
+- Splash animation source is [`assets/dsstore.json`](./assets/dsstore.json).
 
----
+## Contributing
 
-## 🎉 That's it!
+Contributions are welcome and appreciated.
 
-Your Shopify site is now a fast, feature-rich mobile app!  
-**To point to a different Shopify store, just update `SHOPIFY_BASE_URL` in `app.js`.**
+1. Fork the repo.
+2. Create a feature branch:
+   ```bash
+   git checkout -b feat/short-description
+   ```
+3. Make your changes with clear commit messages.
+4. Run checks before pushing:
+   ```bash
+   npm run lint
+   npm run test
+   ```
+5. Open a Pull Request with:
+   - what changed
+   - why it changed
+   - screenshots or recordings for UI changes
+   - testing notes
 
----
+### Contribution Guidelines
 
-> Replace `<REPO_URL>` and `<PROJECT_NAME>` with your actual repo link and folder name.
+- Keep PRs focused and small when possible.
+- Match the existing code style and file structure.
+- Add or update tests for behavior changes.
+- Discuss significant architecture changes in an issue before implementation.
+
+## Troubleshooting
+
+- React Native troubleshooting:
+  https://reactnative.dev/docs/troubleshooting
+- If iOS build fails after dependency changes, run:
+  ```bash
+  cd ios && pod install && cd ..
+  ```
+
+## License
+
+Add a license file before publishing publicly (MIT is a common choice for open source projects).

@@ -17,7 +17,7 @@ import SplashScreen from './components/SplashScreen';
 import NoInternetScreen from './components/NoInternetScreen';
 
 // 🛍️ Shopify base URL
-const SHOPIFY_BASE_URL = 'https://ds-dotera.myshopify.com';
+const SHOPIFY_BASE_URL = '';
 
 const Tab = createBottomTabNavigator();
 const hapticOptions = {
