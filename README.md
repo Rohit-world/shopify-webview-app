@@ -30,6 +30,8 @@ This project is designed to be open source and contribution-friendly.
 ```text
 .
 |- App.tsx
+|- config/
+|  `- shopify.ts
 |- components/
 |  |- WebWrapper.tsx
 |  |- SplashScreen.tsx
@@ -56,7 +58,7 @@ https://reactnative.dev/docs/set-up-your-environment
 ### 1. Clone
 
 ```bash
-git clone <YOUR_REPO_URL>
+git clone https://github.com/Rohit-world/shopify-webview-app.git
 cd shopify-webview-app
 ```
 
@@ -68,15 +70,15 @@ npm install
 
 ### 3. Configure your Shopify store URL
 
-In [`App.tsx`](./App.tsx), set the `SHOPIFY_BASE_URL` value:
+In [`config/shopify.ts`](./config/shopify.ts), set `configuredBaseUrl`:
 
 ```ts
-const SHOPIFY_BASE_URL = 'https://your-store.myshopify.com';
+const configuredBaseUrl = 'https://your-store.myshopify.com';
 ```
 
 Notes:
 - Use your actual store domain.
-- Do not add a trailing slash.
+- A trailing slash is fine (it is normalized automatically).
 
 ### 4. iOS only: install pods
 
@@ -116,6 +118,7 @@ npm run ios
 
 ## Customization
 
+- Store URL config lives in [`config/shopify.ts`](./config/shopify.ts).
 - Tab routes are defined in [`App.tsx`](./App.tsx).
 - WebView behavior and injected JavaScript are in [`components/WebWrapper.tsx`](./components/WebWrapper.tsx).
 - Splash animation source is [`assets/dsstore.json`](./assets/dsstore.json).
@@ -123,6 +126,9 @@ npm run ios
 ## Contributing
 
 Contributions are welcome and appreciated.
+
+For full contribution workflow and expectations, see
+[`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
 1. Fork the repo.
 2. Create a feature branch:
@@ -147,6 +153,7 @@ Contributions are welcome and appreciated.
 - Match the existing code style and file structure.
 - Add or update tests for behavior changes.
 - Discuss significant architecture changes in an issue before implementation.
+- Follow the [Code of Conduct](./CODE_OF_CONDUCT.md).
 
 ## Troubleshooting
 
@@ -159,4 +166,4 @@ Contributions are welcome and appreciated.
 
 ## License
 
-Add a license file before publishing publicly (MIT is a common choice for open source projects).
+This project is licensed under the MIT License. See [`LICENSE`](./LICENSE).

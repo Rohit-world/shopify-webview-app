@@ -1,7 +1,6 @@
 import React from 'react';
 import WebWrapper from './components/WebWrapper.tsx';
-
-export const SHOP_URL = 'https://ds-dotera.myshopify.com';
+import { SHOPIFY_URLS } from './config/shopify';
 
 export const commonWebProps = {
   sharedCookiesEnabled: true,
@@ -30,8 +29,8 @@ export const commonWebProps = {
 };
 
 export const webViews = {
-  Home: <WebWrapper uri={SHOP_URL} />,
-  Shop: <WebWrapper uri={`${SHOP_URL}/collections/all`} />,
-  Cart: <WebWrapper uri={`${SHOP_URL}/cart`} />,
-  Account: <WebWrapper uri={`${SHOP_URL}/account`} />,
+  Home: <WebWrapper uri={SHOPIFY_URLS.home} />,
+  Shop: <WebWrapper uri={SHOPIFY_URLS.products} />,
+  Cart: <WebWrapper uri={SHOPIFY_URLS.cart} />,
+  Account: <WebWrapper uri={SHOPIFY_URLS.account} />,
 };

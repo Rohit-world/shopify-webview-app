@@ -15,9 +15,8 @@ import WebWrapper, { WebWrapperRef } from './components/WebWrapper';
 import AnimatedTabIcon from './components/AnimatedTabIcon';
 import SplashScreen from './components/SplashScreen';
 import NoInternetScreen from './components/NoInternetScreen';
+import { SHOPIFY_URLS } from './config/shopify';
 
-// 🛍️ Shopify base URL
-const SHOPIFY_BASE_URL = '';
 
 const Tab = createBottomTabNavigator();
 const hapticOptions = {
@@ -46,10 +45,10 @@ export default function App() {
 
   if (!isSplashDone) {
     const preloadUris = [
-      `${SHOPIFY_BASE_URL}`,
-      `${SHOPIFY_BASE_URL}/collections/all`,
-      `${SHOPIFY_BASE_URL}/collections`,
-      `${SHOPIFY_BASE_URL}/account`,
+      SHOPIFY_URLS.home,
+      SHOPIFY_URLS.products,
+      SHOPIFY_URLS.collections,
+      SHOPIFY_URLS.account,
     ];
 
     return (
@@ -121,7 +120,7 @@ export default function App() {
             <Tab.Screen name="Home">
               {() => (
                 <WebWrapper
-                  uri={`${SHOPIFY_BASE_URL}`}
+                  uri={SHOPIFY_URLS.home}
                   ref={homeRef}
                   onCheckoutUrlChange={setIsCheckoutPage}
                 />
@@ -130,7 +129,7 @@ export default function App() {
             <Tab.Screen name="Products">
               {() => (
                 <WebWrapper
-                  uri={`${SHOPIFY_BASE_URL}/collections/all`}
+                  uri={SHOPIFY_URLS.products}
                   ref={productsRef}
                   onCheckoutUrlChange={setIsCheckoutPage}
                 />
@@ -139,7 +138,7 @@ export default function App() {
             <Tab.Screen name="Collections">
               {() => (
                 <WebWrapper
-                  uri={`${SHOPIFY_BASE_URL}/collections`}
+                  uri={SHOPIFY_URLS.collections}
                   ref={collectionsRef}
                   onCheckoutUrlChange={setIsCheckoutPage}
                 />
@@ -148,7 +147,7 @@ export default function App() {
             <Tab.Screen name="Account">
               {() => (
                 <WebWrapper
-                  uri={`${SHOPIFY_BASE_URL}/account`}
+                  uri={SHOPIFY_URLS.account}
                   ref={accountRef}
                   onCheckoutUrlChange={setIsCheckoutPage}
                 />
@@ -170,3 +169,4 @@ const styles = StyleSheet.create({
   },
   safeArea: { flex: 1, backgroundColor: '#fff' },
 });
+
